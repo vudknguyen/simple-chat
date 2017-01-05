@@ -1,0 +1,18 @@
+.currentUserEdit {
+  padding: 20px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.0980392);
+  height:60px;
+}
+
+.currentUserEdit input {
+  width:110px;
+}
+
+.linkBtn {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.disabled, .disabled:hover {
+  color: gray;
+}

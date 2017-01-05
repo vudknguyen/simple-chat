@@ -1,0 +1,10 @@
+.currentUser {
+  padding: 20px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.0980392);
+  line-height: 20px;
+}
+
+.editLinkBtn {
+  margin-left: 10px;
+  cursor: pointer;
+}

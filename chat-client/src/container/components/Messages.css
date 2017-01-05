@@ -1,0 +1,8 @@
+.messages {
+  position: relative;
+  list-style: none;
+  padding: 20px 10px 10px 10px;
+  margin: 0;
+  height: calc(100% - 90px);
+  overflow: scroll;
+}

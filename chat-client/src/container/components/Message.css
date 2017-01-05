@@ -1,0 +1,82 @@
+ .message {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+ .message.left .userName {
+  height:20px;
+  margin-left:20px;
+}
+ .message.left .text_wrapper {
+  background-color: #f1f0f0;
+  margin-left: 20px;
+}
+ .message.left .text_wrapper::after,  .message.left .text_wrapper::before {
+  right: 100%;
+  border-right-color: #f1f0f0;
+}
+ .message.left .text {
+  color: #444;
+}
+ .message.right .userName {
+  height:20px;
+  margin-right:20px;
+  text-align: right;
+}
+ .message.right .text_wrapper {
+  background-color: #0084ff;
+  margin-right: 20px;
+  float: right;
+}
+ .message.right .text_wrapper::after,  .message.right .text_wrapper::before {
+  left: 100%;
+  border-left-color: #0084ff;
+}
+ .message.right .text {
+  color: #fff;
+}
+ .message.appeared {
+  opacity: 1;
+}
+ .message .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+}
+ .message .text_wrapper {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 3px;
+  /*width: calc(100% - 85px);*/
+  width:auto;
+  min-width: 100px;
+  position: relative;
+}
+
+ .message .text_wrapper .time {
+  color: #888;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+ .message.right .text_wrapper .time {
+  color: #DDD;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+ .message .text_wrapper::after {
+  border-width: 13px;
+  margin-top: 0px;
+}
+ .message .text_wrapper::before {
+  border-width: 15px;
+  margin-top: -2px;
+}
+ .message .text_wrapper .text {
+  font-size: 18px;
+  font-weight: 300;
+}
