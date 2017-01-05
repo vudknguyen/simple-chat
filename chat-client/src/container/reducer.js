@@ -117,7 +117,6 @@ export function reducer(state = initialState, action) {
       });
     case USERNAME_CHANGED:
       const messages = Object.assign([], state.messages);
-      const users = Object.assign([], state.users);
       messages.filter(m => m.sender === action.updateName.prevName).forEach(m => { m.sender = action.updateName.newName });
       return Object.assign({}, state, {
         messages,
@@ -137,6 +136,7 @@ export function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         typingUsers: state.typingUsers.filter(u => u !== action.user),
       });
+    default:
+      return state;
   }
-  return state;
 }

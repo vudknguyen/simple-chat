@@ -6,7 +6,7 @@ import config from '../config';
 
 import ChatPanel from './components/ChatPanel';
 import UserPanel from './components/UserPanel';
-
+import Spinner from './components/Spinner';
 import {
   sendMessage, createConnection, connectSuccess, connectFailure,
   tryReconnect, receiveMessage, userConnected, userDisconnected,
@@ -94,9 +94,7 @@ class ChatWindow extends Component {
   }
 
   _loading() {
-    return (
-      <div>Loading...</div>
-    )
+    return (<Spinner />)
   }
 
   _chat() {
@@ -132,6 +130,7 @@ class ChatWindow extends Component {
     switch (this.props.status) {
       case 'READY':
       case 'CONNECTING':
+      default:
         return this._loading();
       case 'CONNECTED':
         return this._chat();

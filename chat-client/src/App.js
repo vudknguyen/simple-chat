@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import thunkMiddleware from 'redux-thunk';
-import { connect, Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { reducer } from './container/reducer.js';
 const store = createStore(reducer, applyMiddleware(thunkMiddleware));

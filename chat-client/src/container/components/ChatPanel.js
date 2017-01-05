@@ -4,14 +4,17 @@ import './ChatPanel.css';
 import Messages from './Messages';
 import NewMessage from './NewMessage';
 import UserTyping from './UserTyping';
-
+import Spinner from './Spinner';
 class ChatPanel extends Component {
   
   _renderPanel() {
     switch (this.props.messagesStatus) {
       case 'LOADING':
       case 'READY':
-        return (<div className="chat_window">Loading message ...</div>)
+      default:
+        return (<div className="chat_window">
+          <Spinner message='Getting messages...'/>
+        </div>)
       case 'LOADED':
         return (<div className="chat_window">
           <Messages

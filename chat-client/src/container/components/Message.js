@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './Message.css';
 import moment from 'moment'
 class Message extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const className = this.props.me ? "message right appeared" : "message left appeared";
     return (

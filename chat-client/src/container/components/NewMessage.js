@@ -43,7 +43,7 @@ class NewMessage extends Component {
     });
 
     this.props.onTyping();
-    
+
     const currentContent = evt.target.value;
     setTimeout(() => {
       if (this.state.content === currentContent) {
@@ -70,8 +70,7 @@ class NewMessage extends Component {
               onBlur={this.onBlur} />
           </div>
           <div className="send_message" onClick={this.onSend}>
-            <div className="icon"></div>
-            <div className="text">Send</div>
+            <div className="text"><i className="fa fa-paper-plane"></i> Send</div>
           </div>
         </form>
       </div>

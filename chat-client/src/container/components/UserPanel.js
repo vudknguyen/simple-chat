@@ -3,13 +3,17 @@ import './UserPanel.css';
 
 import Users from './Users';
 import CurrentUserEditable from './CurrentUserEditable';
+import Spinner from './Spinner';
 
 class UserPanel extends Component {
   _renderPanel() {
     switch (this.props.usersStatus) {
       case 'LOADING':
       case 'READY':
-        return (<div className="users_panel">Loading users ...</div>)
+      default:
+        return (<div className="users_panel">
+          <Spinner message='Getting users...'/>
+        </div>)
       case 'LOADED':
         return (<div className="users_panel">
           <CurrentUserEditable me={this.props.me} onSubmitName={this.props.onSubmitName} />
