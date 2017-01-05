@@ -1,6 +1,8 @@
+import config from './config';
+
 class ApiClient {
   getMessages() {
-    return fetch('http://localhost:3001/api/messages')
+    return fetch(config.serverUrl + '/api/messages')
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -11,7 +13,7 @@ class ApiClient {
   }
 
   getUsers() {
-    return fetch('http://localhost:3001/api/users')
+    return fetch(config.serverUrl + '/api/users')
       .then(response => {
         if (response.ok) {
           return response.json();

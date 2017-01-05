@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './ChatWindow.css';
 import _ from 'lodash';
+import config from '../config';
 
 import ChatPanel from './components/ChatPanel';
 import UserPanel from './components/UserPanel';
@@ -25,7 +26,7 @@ class ChatWindow extends Component {
 
   componentDidMount() {
     this.props.connect();
-    this.socket = io('http://localhost:3001', { timeout: 8000 });
+    this.socket = io(config.serverUrl, { timeout: 8000 });
     this.socket.on('connect', () => { this.connected() });
     this.socket.on('error', (error) => { console.log(error) });
     this.socket.on('reconnecting', (t) => { this.props.tryReconnect() });
@@ -46,7 +47,7 @@ class ChatWindow extends Component {
     });
     this.socket.on('user typing', user => {
       console.log('Debug: User typing', user);
-      if(!_.find(this.props.typingUsers, u => u === user)) {
+      if (!_.find(this.props.typingUsers, u => u === user)) {
         this.props.userTyping(user);
       }
     });
@@ -111,7 +112,7 @@ class ChatWindow extends Component {
           messagesStatus={this.props.messagesStatus}
           messages={this.props.messages}
           myName={this.props.myName}
-          onSend={this.onSend} 
+          onSend={this.onSend}
           message={this.props.message}
           typingUsers={this.props.typingUsers}
           onTyping={this.onTyping}
