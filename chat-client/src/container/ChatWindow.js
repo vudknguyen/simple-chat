@@ -94,7 +94,7 @@ class ChatWindow extends Component {
   }
 
   _loading() {
-    return (<Spinner />)
+    return (<Spinner message='Connecting...' />)
   }
 
   _chat() {
