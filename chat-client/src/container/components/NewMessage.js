@@ -7,7 +7,7 @@ class NewMessage extends Component {
 
     this.state = {
       content: ''
-    }
+    };
 
     this.onSend = this.onSend.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -27,7 +27,7 @@ class NewMessage extends Component {
   componentWillReceiveProps(updated) {
     this.setState({
       content: updated.message.content
-    })
+    });
   }
 
   validate() {

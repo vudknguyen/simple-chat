@@ -10,7 +10,7 @@ class CurrentUserEditable extends Component {
 
     this.state = {
       editing: false,
-    }
+    };
 
     this.onEditNameClick = this.onEditNameClick.bind(this);
     this.onCancel = this.onCancel.bind(this);

@@ -8,7 +8,7 @@ class CurrentUserEditForm extends Component {
     this.state = {
       value: this.props.value,
       submitDisabled: false,
-    }
+    };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmitUsername = this.onSubmitUsername.bind(this);
@@ -53,7 +53,7 @@ class CurrentUserEditForm extends Component {
         <a className={submitClassName} onClick={this.onSubmitUsername}><i className='fa fa-check'></i></a>
         <a className='linkBtn' onClick={this.props.onCancel}><i className='fa fa-times'></i></a>
       </div>
-    )
+    );
   }
 }
 

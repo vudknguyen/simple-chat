@@ -14,7 +14,7 @@ class ChatPanel extends Component {
       default:
         return (<div className="chat_window">
           <Spinner message='Getting messages...'/>
-        </div>)
+        </div>);
       case 'LOADED':
         return (<div className="chat_window">
           <Messages
@@ -28,7 +28,7 @@ class ChatPanel extends Component {
             onStopTyping={this.props.onStopTyping} />
         </div>);
       case 'FAILURE':
-        return (<div className="chat_window">Error loading message ...</div>)
+        return (<div className="chat_window">Error loading message ...</div>);
     }
   }
   render() {
